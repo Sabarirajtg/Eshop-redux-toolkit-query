@@ -29,12 +29,14 @@ const ItemDescription = () => {
       <h1>{category + " / " + item} </h1>
       <Grid container spacing={4}>
         <Grid item xs={12} md={12} lg={12} xl={5}>
-          <img
-            src={meals[0].strMealThumb}
-            alt={meals[0].strMeal}
-            width={"700px"}
-            height={"700px"}
-          />
+          <div className="img-wrapper">
+            <img
+              src={meals[0].strMealThumb}
+              alt={meals[0].strMeal}
+              width={"700px"}
+              height={"700px"}
+            />
+          </div>
         </Grid>
         <Grid item xs={12} md={12} lg={12} xl={7}>
           <Typography variant="body1" mb={4}>

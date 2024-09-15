@@ -62,4 +62,9 @@ a {
     margin-left: 60px;
     text-align: center;
   }
+
+  .img-wrapper img {
+    width: 400px;
+    height: 400px;
+  }
 }
