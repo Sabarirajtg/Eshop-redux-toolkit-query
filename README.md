@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# E-Shop Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This document describes the implementation of a dynamic and interactive E-Shop application using React, Redux Toolkit, and RTK Query. The application features a centralized state for categories and items, user navigation, cart management, and order placement. Material-UI is used throughout the application for responsive design and to achieve a shimmer effect for loading states.
 
-In the project directory, you can run:
+## State Management
 
-### `npm start`
+- **Centralized State**: 
+  - Managed using **Redux Toolkit**.
+  - Contains a list of categories, each with a list of items.
+  - RTK Query is used for API calls to fetch categories and items.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Layout
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Header**:
+  - Includes a cart button with the quantity of items in the cart displayed on top of the cart icon.
+  - Clicking the cart icon navigates to the cart page.
 
-### `npm test`
+## Home Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Category List**:
+  - Displays a list of categories.
+  - Clicking on a category navigates to the items listing page for that category.
 
-### `npm run build`
+## Item Card
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Functionality**:
+  - Allows users to add individual products to the cart.
+  - Clicking on an item card navigates to the item description page, where users can also update the cart.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Cart Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Layout**:
+  - Left Section: Displays a list of items in the cart.
+  - Right Section: Shows a summary of the cart.
+- **Interactions**:
+  - Users can change the quantity of items. If reduced to less than 1, the item is removed from the cart.
+  - Includes a "Place Order" button that generates a unique order ID and navigates to the orders listing page.
 
-### `npm run eject`
+## Orders Listing Page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Display**:
+  - Lists all orders, each containing the items included in the order.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Implementation Details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Pricing**:
+  - Prices for products are generated using `Math.random()` to simulate dynamic pricing.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Material-UI**:
+  - Used throughout the application to achieve responsiveness and enhance UI with components like buttons, cards, and grids.
+  - Implemented a shimmer effect for loading states to improve user experience.
 
-## Learn More
+## API Integration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **API Source**: [The Meal DB API](https://www.themealdb.com/api.php)
+  - Utilized RTK Query to fetch data from the API, including categories and items.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React**: For building the user interface and managing state.
+- **Redux Toolkit**: For state management and handling global state.
+- **RTK Query**: For API data fetching and caching.
+- **Material-UI**: For UI components and responsive design.
+- **JavaScript**: For generating random prices and handling other logic.

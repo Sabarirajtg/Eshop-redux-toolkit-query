@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, Outlet } from "react-router-dom";
+import Error from "./Components/Error";
+import Header from "./Components/Header";
+import Home from "./Pages/Home";
+import { Toolbar } from "@mui/material";
+import { Provider } from "react-redux";
+import store, { persistor } from "./store/store";
+import Items from "./Pages/Items";
+import ItemDescription from "./Pages/ItemDescription";
+import Cart from "./Pages/Cart";
+import { PersistGate } from "redux-persist/integration/react";
+import MyOrders from "./Pages/MyOrders";
 
-function App() {
+const AppLayout = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <div className="content">
+          <Header />
+          <Toolbar />
+          <Outlet />
+        </div>
+      </PersistGate>
+    </Provider>
   );
-}
+};
 
-export default App;
+export let appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      { path: "/", element: <Home /> },
+      {
+        path: "/items/:category",
+        element: <Items />,
+      },
+      { path: "/:category/:item", element: <ItemDescription /> },
+      { path: "/cart", element: <Cart /> },
+      { path: "/myorders", element: <MyOrders /> },
+    ],
+  },
+]);
