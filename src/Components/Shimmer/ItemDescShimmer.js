@@ -11,7 +11,24 @@ function ItemDescShimmer() {
       />
       <Grid container spacing={4}>
         <Grid item xs={12} md={12} lg={12} xl={5}>
-          <Skeleton variant="rectangular" width={700} height={700} />
+          <Box
+            sx={{
+              "@media (max-width: 539px)": {
+                "& .skeleton": {
+                  width: "340px",
+                  height: "340px",
+                },
+              },
+              "@media (min-width: 540px)": {
+                "& .skeleton": {
+                  width: "700px",
+                  height: "700px",
+                },
+              },
+            }}
+          >
+            <Skeleton className="skeleton" variant="rectangular" />
+          </Box>
         </Grid>
         <Grid item xs={12} md={12} lg={12} xl={7}>
           <Skeleton variant="text" width="80%" height={40} />
