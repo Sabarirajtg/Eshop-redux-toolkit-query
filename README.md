@@ -41,6 +41,7 @@ This document describes the implementation of a dynamic and interactive E-Shop a
 ## Orders Listing Page
 
 - **Display**:
+  - By clicking on profile icon in the Header, a My Order Menu will be displayed, clicking on this will bring to My Orders
   - Lists all orders, each containing the items included in the order.
 
 ## Implementation Details
