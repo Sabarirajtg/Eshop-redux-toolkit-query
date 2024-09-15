@@ -2,7 +2,7 @@ import { Card, CardContent, Grid2 } from "@mui/material";
 import Skeleton from "@mui/material/Skeleton";
 import * as React from "react";
 
-export default function Shimmer({ width }) {
+export default function Shimmer({ width, type }) {
   return (
     <>
       <Skeleton
@@ -13,7 +13,10 @@ export default function Shimmer({ width }) {
       <Grid2 container spacing={4}>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((item) => (
           <Grid2 size="auto" key={item}>
-            <Card sx={{ width: width }} className="category-card">
+            <Card
+              sx={{ width: width }}
+              className={type === "items" ? "" : "category-card"}
+            >
               <Skeleton variant="rectangular" width={345} height={140} />
               <CardContent>
                 <Skeleton variant="text" height={30} width="80%" />

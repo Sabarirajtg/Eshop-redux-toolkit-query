@@ -12,7 +12,7 @@ const Items = () => {
   if (isLoading) {
     return (
       <>
-        <Shimmer />
+        <Shimmer type={"items"}/>
       </>
     );
   }
