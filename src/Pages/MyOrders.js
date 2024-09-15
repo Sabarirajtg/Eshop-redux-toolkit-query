@@ -1,9 +1,30 @@
-import { Card, Grid, Typography } from "@mui/material";
+import { Button, Card, Grid, Typography } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const MyOrders = () => {
   const orders = useSelector((state) => state.order.items);
+
+  const navigate = useNavigate();
+
+  if (orders.length === 0) {
+    return (
+      <div style={{ textAlign: "center" }}>
+        <h1>There are no orders placed</h1>
+        <h2>Keep Shopping!</h2>
+        <Button
+          variant="contained"
+          size="large"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Shop by category
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <>
