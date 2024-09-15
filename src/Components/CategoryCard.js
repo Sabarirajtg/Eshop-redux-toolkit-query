@@ -8,7 +8,7 @@ import CardActionArea from "@mui/material/CardActionArea";
 export default function CategoryCard({ categoryData }) {
   const { strCategory, strCategoryThumb } = categoryData;
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className="category-card">
       <CardActionArea>
         <CardMedia
           component="img"

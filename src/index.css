@@ -10,6 +10,10 @@ a {
   color: black;
 }
 
+.category-card {
+  margin: 0px;
+}
+
 .content {
   padding: 0px 20px 20px 20px;
 }
@@ -45,4 +49,17 @@ a {
 .card-container {
   margin-bottom: 10px;
   padding: 10px;
+}
+
+@media (max-width: 1299px) {
+  .order-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 539px) {
+  .category-card {
+    margin-left: 60px;
+    text-align: center;
+  }
 }
