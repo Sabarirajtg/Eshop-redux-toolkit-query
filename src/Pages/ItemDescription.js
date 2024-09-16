@@ -33,8 +33,8 @@ const ItemDescription = () => {
             <img
               src={meals[0].strMealThumb}
               alt={meals[0].strMeal}
-              width={"700px"}
-              height={"700px"}
+              width={"600px"}
+              height={"600px"}
             />
           </div>
         </Grid>
