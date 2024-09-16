@@ -21,8 +21,8 @@ function ItemDescShimmer() {
               },
               "@media (min-width: 540px)": {
                 "& .skeleton": {
-                  width: "700px",
-                  height: "700px",
+                  width: "600px",
+                  height: "600px",
                 },
               },
             }}
